@@ -14,8 +14,11 @@
  Contact: ps-license@tuebingen.mpg.de
 */
 
-#include <torch/extension.h>
-#include <torch/types.h>
+// #include <torch/extension.h>
+#include <ATen/ATen.h>
+#include <ATen/cuda/CUDAContext.h>
+#include <c10/cuda/CUDAGuard.h>
+// #include <torch/types.h>
 
 #include "device_launch_parameters.h"
 #include <cuda.h>
@@ -519,7 +522,7 @@ __device__ void find_triangle_triangle_intersection_points(
 
 template <typename T>
 __device__ int
-traverse_bvh(long *collisionIndices, vec3<T> *intersection_bcs,
+traverse_bvh(double *collisionIndices, vec3<T> *intersection_bcs,
              BVHNodePtr<T> root, const Triangle<T> &query_triangle,
              int max_collisions, bool collision_ordering = true) {
   int num_collisions = 0;
@@ -590,7 +593,7 @@ traverse_bvh(long *collisionIndices, vec3<T> *intersection_bcs,
 
 template <typename T>
 __global__ void
-findPotentialCollisions(long *collisionIndices, vec3<T> *intersection_bcs_ptr,
+findPotentialCollisions(double *collisionIndices, vec3<T> *intersection_bcs_ptr,
                         BVHNodePtr<T> root, BVHNodePtr<T> leaves,
                         Triangle<T> *query_triangles, int num_query_triangles,
                         int max_collisions) {
@@ -598,7 +601,7 @@ findPotentialCollisions(long *collisionIndices, vec3<T> *intersection_bcs_ptr,
        idx < num_query_triangles; idx += blockDim.x * gridDim.x) {
     Triangle<T> query_triangle = query_triangles[idx];
 
-    long *curr_collision_idxs = collisionIndices + idx * max_collisions;
+    double *curr_collision_idxs = collisionIndices + idx * max_collisions;
     vec3<T> *curr_intersection_bcs_ptr =
         intersection_bcs_ptr + idx * max_collisions * 2;
     int num_collisions =
@@ -966,10 +969,10 @@ void buildBVH(BVHNodePtr<T> internal_nodes, BVHNodePtr<T> leaf_nodes,
   return;
 }
 
-void mesh_mesh_intersection_forward(const torch::Tensor &query_triangles,
-                                    const torch::Tensor &target_triangles,
-                                    torch::Tensor &collision_faces,
-                                    torch::Tensor &collision_bcs,
+void mesh_mesh_intersection_forward(const at::Tensor &query_triangles,
+                                    const at::Tensor &target_triangles,
+                                    at::Tensor &collision_faces,
+                                    at::Tensor &collision_bcs,
                                     int max_collisions = 16,
                                     bool print_timings = false) {
   const auto batch_size = query_triangles.size(0);
@@ -981,7 +984,7 @@ void mesh_mesh_intersection_forward(const torch::Tensor &query_triangles,
   int blockSize = NUM_THREADS;
   int gridSize = (num_query_triangles + blockSize - 1) / blockSize;
 
-  thrust::device_vector<long> coll_faces_vector(num_query_triangles *
+  thrust::device_vector<double> coll_faces_vector(num_query_triangles *
                                                 max_collisions);
   cudaEvent_t start, stop;
   float milliseconds = 0;
@@ -990,7 +993,7 @@ void mesh_mesh_intersection_forward(const torch::Tensor &query_triangles,
     cudaEventCreate(&stop);
   }
 
-  auto collision_faces_ptr = collision_faces.data_ptr<long>();
+  auto collision_faces_ptr = collision_faces.data_ptr<double>();
 
   // Construct the bvh tree
   AT_DISPATCH_FLOATING_TYPES(
@@ -1046,8 +1049,8 @@ void mesh_mesh_intersection_forward(const torch::Tensor &query_triangles,
 
           cudaMemcpy(collision_faces_ptr +
                          bidx * num_query_triangles * max_collisions,
-                     (long *)coll_faces_vector.data().get(),
-                     coll_faces_vector.size() * sizeof(long),
+                     (double *)coll_faces_vector.data().get(),
+                     coll_faces_vector.size() * sizeof(double),
                      cudaMemcpyDeviceToDevice);
           cudaCheckError();
 

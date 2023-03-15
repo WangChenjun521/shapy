@@ -2,7 +2,7 @@ import sys
 import os
 import os.path as osp
 
-os.environ['PYOPENGL_PLATFORM'] = 'egl'
+# os.environ['PYOPENGL_PLATFORM'] = 'egl'
 
 import matplotlib.pyplot as plt
 import PIL.Image as pil_img
@@ -18,7 +18,7 @@ from collections import OrderedDict
 import numpy as np
 from omegaconf import OmegaConf, DictConfig
 
-import resource
+# import resource
 
 from human_shape.config.defaults import conf as default_conf
 from human_shape.models.build import build_model
@@ -28,8 +28,8 @@ from human_shape.data.structures.image_list import to_image_list
 from human_shape.utils import Checkpointer, COLORS, OverlayRenderer, HDRenderer
 
 
-rlimit = resource.getrlimit(resource.RLIMIT_NOFILE)
-resource.setrlimit(resource.RLIMIT_NOFILE, (rlimit[1], rlimit[1]))
+# rlimit = resource.getrlimit(resource.RLIMIT_NOFILE)
+# resource.setrlimit(resource.RLIMIT_NOFILE, (rlimit[1], rlimit[1]))
 
 
 def weak_persp_crop_to_blender(

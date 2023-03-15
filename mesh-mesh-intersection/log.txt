@@ -1,0 +1,488 @@
+running install
+running bdist_egg
+running egg_info
+writing mesh_mesh_intersection.egg-info\PKG-INFO
+writing dependency_links to mesh_mesh_intersection.egg-info\dependency_links.txt
+writing requirements to mesh_mesh_intersection.egg-info\requires.txt
+writing top-level names to mesh_mesh_intersection.egg-info\top_level.txt
+reading manifest file 'mesh_mesh_intersection.egg-info\SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'mesh_mesh_intersection.egg-info\SOURCES.txt'
+installing library code to build\bdist.win-amd64\egg
+running install_lib
+running build_py
+running build_ext
+building 'mesh_mesh_intersect_cuda' extension
+Emitting ninja build file D:\mocap_ysy\shapy\mesh-mesh-intersection\build\temp.win-amd64-cpython-38\Release\build.ninja...
+Compiling objects...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+[1/1] C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6\bin\nvcc --generate-dependencies-with-compile --dependency-output D:\mocap_ysy\shapy\mesh-mesh-intersection\build\temp.win-amd64-cpython-38\Release\src/mesh_mesh_intersect_cuda_op.obj.d --use-local-env -Xcompiler /MD -Xcompiler /wd4819 -Xcompiler /wd4251 -Xcompiler /wd4244 -Xcompiler /wd4267 -Xcompiler /wd4275 -Xcompiler /wd4018 -Xcompiler /wd4190 -Xcompiler /EHsc -Xcudafe --diag_suppress=base_class_has_different_dll_interface -Xcudafe --diag_suppress=field_without_dll_interface -Xcudafe --diag_suppress=dll_interface_conflict_none_assumed -Xcudafe --diag_suppress=dll_interface_conflict_dllexport_assumed -IC:\Users\admin\.conda\envs\df\lib\site-packages\torch\include -IC:\Users\admin\.conda\envs\df\lib\site-packages\torch\include\torch\csrc\api\include -IC:\Users\admin\.conda\envs\df\lib\site-packages\torch\include\TH -IC:\Users\admin\.conda\envs\df\lib\site-packages\torch\include\THC -ID:\mocap_ysy\shapy\mesh-mesh-intersection\include "-ID:\mocap_ysy\shapy\mesh-mesh-intersection\ D:\mocap_ysy\shapy\mesh-mesh-intersection\include" -IC:\Users\admin\.conda\envs\df\lib\site-packages\torch\include -IC:\Users\admin\.conda\envs\df\lib\site-packages\torch\include\torch\csrc\api\include -IC:\Users\admin\.conda\envs\df\lib\site-packages\torch\include\TH -IC:\Users\admin\.conda\envs\df\lib\site-packages\torch\include\THC "-IC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6\include" -IC:\Users\admin\.conda\envs\df\include -IC:\Users\admin\.conda\envs\df\Include "-IC:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\include" "-IC:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\include" "-IC:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt" "-IC:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\cppwinrt" -c D:\mocap_ysy\shapy\mesh-mesh-intersection\src\mesh_mesh_intersect_cuda_op.cu -o D:\mocap_ysy\shapy\mesh-mesh-intersection\build\temp.win-amd64-cpython-38\Release\src/mesh_mesh_intersect_cuda_op.obj -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -DPRINT_TIMINGS=0 -DDEBUG_PRINT=0 -DERROR_CHECKING=1 -DCOLLISION_ORDERING=1 -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=mesh_mesh_intersect_cuda -D_GLIBCXX_USE_CXX11_ABI=0 -gencode=arch=compute_86,code=compute_86 -gencode=arch=compute_86,code=sm_86
+D:\mocap_ysy\shapy\mesh-mesh-intersection\src\mesh_mesh_intersect_cuda_op.cu(408): warning #177-D: variable "tmax" was declared but never referenced
+          detected during:
+            instantiation of "void find_triangle_triangle_intersection_points(const Triangle<T> &, const Triangle<T> &, vec3<T> *, vec3<T> *) [with T=double]" 
+(559): here
+            instantiation of "int traverse_bvh(double *, vec3<T> *, BVHNodePtr<T>, const Triangle<T> &, int, __nv_bool) [with T=double]" 
+(609): here
+            instantiation of "void findPotentialCollisions(double *, vec3<T> *, BVHNodePtr<T>, BVHNodePtr<T>, Triangle<T> *, int, int) [with T=double]" 
+(999): here
+
+D:\mocap_ysy\shapy\mesh-mesh-intersection\src\mesh_mesh_intersect_cuda_op.cu(408): warning #177-D: variable "tmax" was declared but never referenced
+          detected during:
+            instantiation of "void find_triangle_triangle_intersection_points(const Triangle<T> &, const Triangle<T> &, vec3<T> *, vec3<T> *) [with T=float]" 
+(559): here
+            instantiation of "int traverse_bvh(double *, vec3<T> *, BVHNodePtr<T>, const Triangle<T> &, int, __nv_bool) [with T=float]" 
+(609): here
+            instantiation of "void findPotentialCollisions(double *, vec3<T> *, BVHNodePtr<T>, BVHNodePtr<T>, Triangle<T> *, int, int) [with T=float]" 
+(999): here
+
+mesh_mesh_intersect_cuda_op.cu
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(183): warning C4624: “c10::constexpr_storage_t<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=at::Tensor
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(367): note: 查看对正在编译的 类 模板 实例化“c10::constexpr_storage_t<T>”的引用
+        with
+        [
+            T=at::Tensor
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 类 模板 实例化“c10::trivially_copyable_optimization_optional_base<T>”的引用
+        with
+        [
+            T=at::Tensor
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 别名 模板 实例化“c10::OptionalBase<at::Tensor>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\ATen/core/TensorBody.h(734): note: 查看对正在编译的 类 模板 实例化“c10::optional<at::Tensor>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(395): warning C4624: “c10::trivially_copyable_optimization_optional_base<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=at::Tensor
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(183): warning C4624: “c10::constexpr_storage_t<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=at::Generator
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(367): note: 查看对正在编译的 类 模板 实例化“c10::constexpr_storage_t<T>”的引用
+        with
+        [
+            T=at::Generator
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 类 模板 实例化“c10::trivially_copyable_optimization_optional_base<T>”的引用
+        with
+        [
+            T=at::Generator
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 别名 模板 实例化“c10::OptionalBase<at::Generator>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\ATen/core/TensorBody.h(800): note: 查看对正在编译的 类 模板 实例化“c10::optional<at::Generator>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(395): warning C4624: “c10::trivially_copyable_optimization_optional_base<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=at::Generator
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(183): warning C4624: “c10::constexpr_storage_t<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=c10::impl::InlineDeviceGuard<c10::impl::VirtualGuardImpl>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(367): note: 查看对正在编译的 类 模板 实例化“c10::constexpr_storage_t<T>”的引用
+        with
+        [
+            T=c10::impl::InlineDeviceGuard<c10::impl::VirtualGuardImpl>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 类 模板 实例化“c10::trivially_copyable_optimization_optional_base<T>”的引用
+        with
+        [
+            T=c10::impl::InlineDeviceGuard<c10::impl::VirtualGuardImpl>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 别名 模板 实例化“c10::OptionalBase<c10::impl::InlineDeviceGuard<c10::impl::VirtualGuardImpl>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/core/impl/InlineDeviceGuard.h(427): note: 查看对正在编译的 类 模板 实例化“c10::optional<c10::impl::InlineDeviceGuard<c10::impl::VirtualGuardImpl>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/core/DeviceGuard.h(178): note: 查看对正在编译的 类 模板 实例化“c10::impl::InlineOptionalDeviceGuard<c10::impl::VirtualGuardImpl>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(395): warning C4624: “c10::trivially_copyable_optimization_optional_base<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=c10::impl::InlineDeviceGuard<c10::impl::VirtualGuardImpl>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(183): warning C4624: “c10::constexpr_storage_t<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=std::basic_string<char,std::char_traits<char>,std::allocator<char>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(367): note: 查看对正在编译的 类 模板 实例化“c10::constexpr_storage_t<T>”的引用
+        with
+        [
+            T=std::basic_string<char,std::char_traits<char>,std::allocator<char>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 类 模板 实例化“c10::trivially_copyable_optimization_optional_base<T>”的引用
+        with
+        [
+            T=std::basic_string<char,std::char_traits<char>,std::allocator<char>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 别名 模板 实例化“c10::OptionalBase<std::basic_string<char,std::char_traits<char>,std::allocator<char>>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\ATen/core/jit_type_base.h(107): note: 查看对正在编译的 类 模板 实例化“c10::optional<std::basic_string<char,std::char_traits<char>,std::allocator<char>>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(395): warning C4624: “c10::trivially_copyable_optimization_optional_base<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=std::basic_string<char,std::char_traits<char>,std::allocator<char>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(183): warning C4624: “c10::constexpr_storage_t<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=std::vector<c10::ShapeSymbol,std::allocator<c10::ShapeSymbol>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(367): note: 查看对正在编译的 类 模板 实例化“c10::constexpr_storage_t<T>”的引用
+        with
+        [
+            T=std::vector<c10::ShapeSymbol,std::allocator<c10::ShapeSymbol>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 类 模板 实例化“c10::trivially_copyable_optimization_optional_base<T>”的引用
+        with
+        [
+            T=std::vector<c10::ShapeSymbol,std::allocator<c10::ShapeSymbol>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 别名 模板 实例化“c10::OptionalBase<std::vector<c10::ShapeSymbol,std::allocator<c10::ShapeSymbol>>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\ATen/core/jit_type.h(351): note: 查看对正在编译的 类 模板 实例化“c10::optional<std::vector<c10::ShapeSymbol,std::allocator<c10::ShapeSymbol>>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(395): warning C4624: “c10::trivially_copyable_optimization_optional_base<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=std::vector<c10::ShapeSymbol,std::allocator<c10::ShapeSymbol>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(183): warning C4624: “c10::constexpr_storage_t<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=std::vector<c10::optional<c10::Stride>,std::allocator<c10::optional<c10::Stride>>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(367): note: 查看对正在编译的 类 模板 实例化“c10::constexpr_storage_t<T>”的引用
+        with
+        [
+            T=std::vector<c10::optional<c10::Stride>,std::allocator<c10::optional<c10::Stride>>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 类 模板 实例化“c10::trivially_copyable_optimization_optional_base<T>”的引用
+        with
+        [
+            T=std::vector<c10::optional<c10::Stride>,std::allocator<c10::optional<c10::Stride>>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 别名 模板 实例化“c10::OptionalBase<std::vector<c10::optional<c10::Stride>,std::allocator<c10::optional<c10::Stride>>>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\ATen/core/jit_type.h(425): note: 查看对正在编译的 类 模板 实例化“c10::optional<std::vector<c10::optional<c10::Stride>,std::allocator<c10::optional<c10::Stride>>>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\ATen/core/jit_type.h(664): note: 查看对正在编译的 类 模板 实例化“c10::VaryingShape<c10::Stride>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(395): warning C4624: “c10::trivially_copyable_optimization_optional_base<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=std::vector<c10::optional<c10::Stride>,std::allocator<c10::optional<c10::Stride>>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(183): warning C4624: “c10::constexpr_storage_t<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=std::vector<c10::optional<__int64>,std::allocator<c10::optional<__int64>>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(367): note: 查看对正在编译的 类 模板 实例化“c10::constexpr_storage_t<T>”的引用
+        with
+        [
+            T=std::vector<c10::optional<__int64>,std::allocator<c10::optional<__int64>>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 类 模板 实例化“c10::trivially_copyable_optimization_optional_base<T>”的引用
+        with
+        [
+            T=std::vector<c10::optional<__int64>,std::allocator<c10::optional<__int64>>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 别名 模板 实例化“c10::OptionalBase<std::vector<c10::optional<__int64>,std::allocator<c10::optional<__int64>>>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\ATen/core/jit_type.h(425): note: 查看对正在编译的 类 模板 实例化“c10::optional<std::vector<c10::optional<__int64>,std::allocator<c10::optional<__int64>>>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\ATen/core/jit_type.h(470): note: 查看对正在编译的 类 模板 实例化“c10::VaryingShape<__int64>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(395): warning C4624: “c10::trivially_copyable_optimization_optional_base<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=std::vector<c10::optional<__int64>,std::allocator<c10::optional<__int64>>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(183): warning C4624: “c10::constexpr_storage_t<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=std::vector<__int64,std::allocator<__int64>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(367): note: 查看对正在编译的 类 模板 实例化“c10::constexpr_storage_t<T>”的引用
+        with
+        [
+            T=std::vector<__int64,std::allocator<__int64>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 类 模板 实例化“c10::trivially_copyable_optimization_optional_base<T>”的引用
+        with
+        [
+            T=std::vector<__int64,std::allocator<__int64>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 别名 模板 实例化“c10::OptionalBase<std::vector<__int64,std::allocator<__int64>>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\ATen/core/jit_type.h(568): note: 查看对正在编译的 类 模板 实例化“c10::optional<std::vector<__int64,std::allocator<__int64>>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(395): warning C4624: “c10::trivially_copyable_optimization_optional_base<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=std::vector<__int64,std::allocator<__int64>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(183): warning C4624: “c10::constexpr_storage_t<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=c10::QualifiedName
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(367): note: 查看对正在编译的 类 模板 实例化“c10::constexpr_storage_t<T>”的引用
+        with
+        [
+            T=c10::QualifiedName
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 类 模板 实例化“c10::trivially_copyable_optimization_optional_base<T>”的引用
+        with
+        [
+            T=c10::QualifiedName
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 别名 模板 实例化“c10::OptionalBase<c10::QualifiedName>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\ATen/core/jit_type.h(903): note: 查看对正在编译的 类 模板 实例化“c10::optional<c10::QualifiedName>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(395): warning C4624: “c10::trivially_copyable_optimization_optional_base<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=c10::QualifiedName
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(183): warning C4624: “c10::constexpr_storage_t<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=c10::impl::InlineStreamGuard<c10::impl::VirtualGuardImpl>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(367): note: 查看对正在编译的 类 模板 实例化“c10::constexpr_storage_t<T>”的引用
+        with
+        [
+            T=c10::impl::InlineStreamGuard<c10::impl::VirtualGuardImpl>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 类 模板 实例化“c10::trivially_copyable_optimization_optional_base<T>”的引用
+        with
+        [
+            T=c10::impl::InlineStreamGuard<c10::impl::VirtualGuardImpl>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 别名 模板 实例化“c10::OptionalBase<c10::impl::InlineStreamGuard<c10::impl::VirtualGuardImpl>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/core/impl/InlineStreamGuard.h(196): note: 查看对正在编译的 类 模板 实例化“c10::optional<c10::impl::InlineStreamGuard<c10::impl::VirtualGuardImpl>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/core/StreamGuard.h(139): note: 查看对正在编译的 类 模板 实例化“c10::impl::InlineOptionalStreamGuard<c10::impl::VirtualGuardImpl>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(395): warning C4624: “c10::trivially_copyable_optimization_optional_base<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=c10::impl::InlineStreamGuard<c10::impl::VirtualGuardImpl>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(183): warning C4624: “c10::constexpr_storage_t<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=c10::impl::VirtualGuardImpl
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(367): note: 查看对正在编译的 类 模板 实例化“c10::constexpr_storage_t<T>”的引用
+        with
+        [
+            T=c10::impl::VirtualGuardImpl
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 类 模板 实例化“c10::trivially_copyable_optimization_optional_base<T>”的引用
+        with
+        [
+            T=c10::impl::VirtualGuardImpl
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 别名 模板 实例化“c10::OptionalBase<c10::impl::VirtualGuardImpl>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/core/impl/InlineStreamGuard.h(231): note: 查看对正在编译的 类 模板 实例化“c10::optional<T>”的引用
+        with
+        [
+            T=c10::impl::VirtualGuardImpl
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/core/StreamGuard.h(162): note: 查看对正在编译的 类 模板 实例化“c10::impl::InlineMultiStreamGuard<c10::impl::VirtualGuardImpl>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(395): warning C4624: “c10::trivially_copyable_optimization_optional_base<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=c10::impl::VirtualGuardImpl
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(183): warning C4624: “c10::constexpr_storage_t<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=std::vector<std::reference_wrapper<const c10::DataPtr>,std::allocator<std::reference_wrapper<const c10::DataPtr>>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(367): note: 查看对正在编译的 类 模板 实例化“c10::constexpr_storage_t<T>”的引用
+        with
+        [
+            T=std::vector<std::reference_wrapper<const c10::DataPtr>,std::allocator<std::reference_wrapper<const c10::DataPtr>>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 类 模板 实例化“c10::trivially_copyable_optimization_optional_base<T>”的引用
+        with
+        [
+            T=std::vector<std::reference_wrapper<const c10::DataPtr>,std::allocator<std::reference_wrapper<const c10::DataPtr>>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 别名 模板 实例化“c10::OptionalBase<std::vector<std::reference_wrapper<const c10::DataPtr>,std::allocator<std::reference_wrapper<const c10::DataPtr>>>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\ATen/core/ivalue_inl.h(362): note: 查看对正在编译的 类 模板 实例化“c10::optional<std::vector<std::reference_wrapper<const c10::DataPtr>,std::allocator<std::reference_wrapper<const c10::DataPtr>>>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(395): warning C4624: “c10::trivially_copyable_optimization_optional_base<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=std::vector<std::reference_wrapper<const c10::DataPtr>,std::allocator<std::reference_wrapper<const c10::DataPtr>>>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(183): warning C4624: “c10::constexpr_storage_t<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=c10::OperatorName
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(367): note: 查看对正在编译的 类 模板 实例化“c10::constexpr_storage_t<T>”的引用
+        with
+        [
+            T=c10::OperatorName
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 类 模板 实例化“c10::trivially_copyable_optimization_optional_base<T>”的引用
+        with
+        [
+            T=c10::OperatorName
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 别名 模板 实例化“c10::OptionalBase<c10::OperatorName>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\ATen/record_function.h(306): note: 查看对正在编译的 类 模板 实例化“c10::optional<c10::OperatorName>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(395): warning C4624: “c10::trivially_copyable_optimization_optional_base<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=c10::OperatorName
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(183): warning C4624: “c10::constexpr_storage_t<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=c10::SmallVector<__int64,5>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(367): note: 查看对正在编译的 类 模板 实例化“c10::constexpr_storage_t<T>”的引用
+        with
+        [
+            T=c10::SmallVector<__int64,5>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 类 模板 实例化“c10::trivially_copyable_optimization_optional_base<T>”的引用
+        with
+        [
+            T=c10::SmallVector<__int64,5>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 别名 模板 实例化“c10::OptionalBase<c10::SmallVector<__int64,5>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\ATen/TensorIterator.h(616): note: 查看对正在编译的 类 模板 实例化“c10::optional<c10::SmallVector<__int64,5>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(395): warning C4624: “c10::trivially_copyable_optimization_optional_base<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=c10::SmallVector<__int64,5>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(183): warning C4624: “c10::constexpr_storage_t<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=c10::impl::InlineDeviceGuard<c10::cuda::impl::CUDAGuardImpl>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(367): note: 查看对正在编译的 类 模板 实例化“c10::constexpr_storage_t<T>”的引用
+        with
+        [
+            T=c10::impl::InlineDeviceGuard<c10::cuda::impl::CUDAGuardImpl>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 类 模板 实例化“c10::trivially_copyable_optimization_optional_base<T>”的引用
+        with
+        [
+            T=c10::impl::InlineDeviceGuard<c10::cuda::impl::CUDAGuardImpl>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 别名 模板 实例化“c10::OptionalBase<c10::impl::InlineDeviceGuard<c10::cuda::impl::CUDAGuardImpl>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/core/impl/InlineDeviceGuard.h(427): note: 查看对正在编译的 类 模板 实例化“c10::optional<c10::impl::InlineDeviceGuard<c10::cuda::impl::CUDAGuardImpl>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/cuda/CUDAGuard.h(140): note: 查看对正在编译的 类 模板 实例化“c10::impl::InlineOptionalDeviceGuard<c10::cuda::impl::CUDAGuardImpl>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(395): warning C4624: “c10::trivially_copyable_optimization_optional_base<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=c10::impl::InlineDeviceGuard<c10::cuda::impl::CUDAGuardImpl>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(183): warning C4624: “c10::constexpr_storage_t<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=c10::impl::InlineStreamGuard<c10::cuda::impl::CUDAGuardImpl>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(367): note: 查看对正在编译的 类 模板 实例化“c10::constexpr_storage_t<T>”的引用
+        with
+        [
+            T=c10::impl::InlineStreamGuard<c10::cuda::impl::CUDAGuardImpl>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 类 模板 实例化“c10::trivially_copyable_optimization_optional_base<T>”的引用
+        with
+        [
+            T=c10::impl::InlineStreamGuard<c10::cuda::impl::CUDAGuardImpl>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 别名 模板 实例化“c10::OptionalBase<c10::impl::InlineStreamGuard<c10::cuda::impl::CUDAGuardImpl>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/core/impl/InlineStreamGuard.h(196): note: 查看对正在编译的 类 模板 实例化“c10::optional<c10::impl::InlineStreamGuard<c10::cuda::impl::CUDAGuardImpl>>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/cuda/CUDAGuard.h(273): note: 查看对正在编译的 类 模板 实例化“c10::impl::InlineOptionalStreamGuard<c10::cuda::impl::CUDAGuardImpl>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(395): warning C4624: “c10::trivially_copyable_optimization_optional_base<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=c10::impl::InlineStreamGuard<c10::cuda::impl::CUDAGuardImpl>
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(183): warning C4624: “c10::constexpr_storage_t<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=c10::cuda::impl::CUDAGuardImpl
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(367): note: 查看对正在编译的 类 模板 实例化“c10::constexpr_storage_t<T>”的引用
+        with
+        [
+            T=c10::cuda::impl::CUDAGuardImpl
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 类 模板 实例化“c10::trivially_copyable_optimization_optional_base<T>”的引用
+        with
+        [
+            T=c10::cuda::impl::CUDAGuardImpl
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(427): note: 查看对正在编译的 别名 模板 实例化“c10::OptionalBase<c10::cuda::impl::CUDAGuardImpl>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/core/impl/InlineStreamGuard.h(231): note: 查看对正在编译的 类 模板 实例化“c10::optional<T>”的引用
+        with
+        [
+            T=c10::cuda::impl::CUDAGuardImpl
+        ]
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/cuda/CUDAGuard.h(292): note: 查看对正在编译的 类 模板 实例化“c10::impl::InlineMultiStreamGuard<c10::cuda::impl::CUDAGuardImpl>”的引用
+C:/Users/admin/.conda/envs/df/lib/site-packages/torch/include\c10/util/Optional.h(395): warning C4624: “c10::trivially_copyable_optimization_optional_base<T>”: 已将析构函数隐式定义为“已删除”
+        with
+        [
+            T=c10::cuda::impl::CUDAGuardImpl
+        ]
+D:\mocap_ysy\shapy\mesh-mesh-intersection\include\defs.hpp(41) : warning C4717: “make_float3”: 如递归所有控件路径，函数将导致运行时堆栈溢出
+D:\mocap_ysy\shapy\mesh-mesh-intersection\include\defs.hpp(49) : warning C4717: “make_double3”: 如递归所有控件路径，函数将导致运行时堆栈溢出
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\link.exe" /nologo /INCREMENTAL:NO /LTCG /DLL /MANIFEST:EMBED,ID=2 /MANIFESTUAC:NO /LIBPATH:C:\Users\admin\.conda\envs\df\lib\site-packages\torch\lib "/LIBPATH:C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6\lib/x64" /LIBPATH:C:\Users\admin\.conda\envs\df\libs /LIBPATH:C:\Users\admin\.conda\envs\df /LIBPATH:C:\Users\admin\.conda\envs\df\PCbuild\amd64 "/LIBPATH:C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\ATLMFC\lib\x64" "/LIBPATH:C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\lib\x64" "/LIBPATH:C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\lib\um\x64" "/LIBPATH:C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\ucrt\x64" "/LIBPATH:C:\Program Files (x86)\Windows Kits\10\lib\10.0.19041.0\um\x64" c10.lib torch.lib torch_cpu.lib torch_python.lib cudart.lib c10_cuda.lib torch_cuda_cu.lib torch_cuda_cpp.lib /EXPORT:PyInit_mesh_mesh_intersect_cuda D:\mocap_ysy\shapy\mesh-mesh-intersection\build\temp.win-amd64-cpython-38\Release\src/mesh_mesh_intersect.obj D:\mocap_ysy\shapy\mesh-mesh-intersection\build\temp.win-amd64-cpython-38\Release\src/mesh_mesh_intersect_cuda_op.obj /OUT:build\lib.win-amd64-cpython-38\mesh_mesh_intersect_cuda.cp38-win_amd64.pyd /IMPLIB:D:\mocap_ysy\shapy\mesh-mesh-intersection\build\temp.win-amd64-cpython-38\Release\src\mesh_mesh_intersect_cuda.cp38-win_amd64.lib
+  正在创建库 D:\mocap_ysy\shapy\mesh-mesh-intersection\build\temp.win-amd64-cpython-38\Release\src\mesh_mesh_intersect_cuda.cp38-win_amd64.lib 和对象 D:\mocap_ysy\shapy\mesh-mesh-intersection\build\temp.win-amd64-cpython-38\Release\src\mesh_mesh_intersect_cuda.cp38-win_amd64.exp
+正在生成代码
+已完成代码的生成
+creating build\bdist.win-amd64
+creating build\bdist.win-amd64\egg
+creating build\bdist.win-amd64\egg\body_measurements
+copying build\lib.win-amd64-cpython-38\body_measurements\body_measurements.py -> build\bdist.win-amd64\egg\body_measurements
+copying build\lib.win-amd64-cpython-38\body_measurements\cwh_measurements.py -> build\bdist.win-amd64\egg\body_measurements
+copying build\lib.win-amd64-cpython-38\body_measurements\__init__.py -> build\bdist.win-amd64\egg\body_measurements
+creating build\bdist.win-amd64\egg\mesh_mesh_intersection
+copying build\lib.win-amd64-cpython-38\mesh_mesh_intersection\loss.py -> build\bdist.win-amd64\egg\mesh_mesh_intersection
+copying build\lib.win-amd64-cpython-38\mesh_mesh_intersection\mesh_mesh_intersection.py -> build\bdist.win-amd64\egg\mesh_mesh_intersection
+copying build\lib.win-amd64-cpython-38\mesh_mesh_intersection\__init__.py -> build\bdist.win-amd64\egg\mesh_mesh_intersection
+copying build\lib.win-amd64-cpython-38\mesh_mesh_intersect_cuda.cp38-win_amd64.pyd -> build\bdist.win-amd64\egg
+byte-compiling build\bdist.win-amd64\egg\body_measurements\body_measurements.py to body_measurements.cpython-38.pyc
+byte-compiling build\bdist.win-amd64\egg\body_measurements\cwh_measurements.py to cwh_measurements.cpython-38.pyc
+byte-compiling build\bdist.win-amd64\egg\body_measurements\__init__.py to __init__.cpython-38.pyc
+byte-compiling build\bdist.win-amd64\egg\mesh_mesh_intersection\loss.py to loss.cpython-38.pyc
+byte-compiling build\bdist.win-amd64\egg\mesh_mesh_intersection\mesh_mesh_intersection.py to mesh_mesh_intersection.cpython-38.pyc
+byte-compiling build\bdist.win-amd64\egg\mesh_mesh_intersection\__init__.py to __init__.cpython-38.pyc
+creating stub loader for mesh_mesh_intersect_cuda.cp38-win_amd64.pyd
+byte-compiling build\bdist.win-amd64\egg\mesh_mesh_intersect_cuda.py to mesh_mesh_intersect_cuda.cpython-38.pyc
+creating build\bdist.win-amd64\egg\EGG-INFO
+copying mesh_mesh_intersection.egg-info\PKG-INFO -> build\bdist.win-amd64\egg\EGG-INFO
+copying mesh_mesh_intersection.egg-info\SOURCES.txt -> build\bdist.win-amd64\egg\EGG-INFO
+copying mesh_mesh_intersection.egg-info\dependency_links.txt -> build\bdist.win-amd64\egg\EGG-INFO
+copying mesh_mesh_intersection.egg-info\requires.txt -> build\bdist.win-amd64\egg\EGG-INFO
+copying mesh_mesh_intersection.egg-info\top_level.txt -> build\bdist.win-amd64\egg\EGG-INFO
+writing build\bdist.win-amd64\egg\EGG-INFO\native_libs.txt
+creating dist
+creating 'dist\mesh_mesh_intersection-0.2.0-py3.8-win-amd64.egg' and adding 'build\bdist.win-amd64\egg' to it
+removing 'build\bdist.win-amd64\egg' (and everything under it)
+Processing mesh_mesh_intersection-0.2.0-py3.8-win-amd64.egg
+creating c:\users\admin\.conda\envs\df\lib\site-packages\mesh_mesh_intersection-0.2.0-py3.8-win-amd64.egg
+Extracting mesh_mesh_intersection-0.2.0-py3.8-win-amd64.egg to c:\users\admin\.conda\envs\df\lib\site-packages
+Adding mesh-mesh-intersection 0.2.0 to easy-install.pth file
+
+Installed c:\users\admin\.conda\envs\df\lib\site-packages\mesh_mesh_intersection-0.2.0-py3.8-win-amd64.egg
+Processing dependencies for mesh-mesh-intersection==0.2.0
+Searching for torch==1.13.1
+Best match: torch 1.13.1
+Processing torch-1.13.1-py3.8-win-amd64.egg
+torch 1.13.1 is already the active version in easy-install.pth
+Installing convert-caffe2-to-onnx-script.py script to C:\Users\admin\.conda\envs\df\Scripts
+Installing convert-caffe2-to-onnx.exe script to C:\Users\admin\.conda\envs\df\Scripts
+Installing convert-onnx-to-caffe2-script.py script to C:\Users\admin\.conda\envs\df\Scripts
+Installing convert-onnx-to-caffe2.exe script to C:\Users\admin\.conda\envs\df\Scripts
+Installing torchrun-script.py script to C:\Users\admin\.conda\envs\df\Scripts
+Installing torchrun.exe script to C:\Users\admin\.conda\envs\df\Scripts
+
+Using c:\users\admin\.conda\envs\df\lib\site-packages\torch-1.13.1-py3.8-win-amd64.egg
+Searching for typing-extensions==4.4.0
+Best match: typing-extensions 4.4.0
+Adding typing-extensions 4.4.0 to easy-install.pth file
+
+Using c:\users\admin\.conda\envs\df\lib\site-packages
+Finished processing dependencies for mesh-mesh-intersection==0.2.0
