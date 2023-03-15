@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SHAPY
 <b> Accurate 3D Body Shape Regression using Metric and Semantic Attributes. </b>\
 [[Project Page](https://shapy.is.tue.mpg.de)] [[Paper](https://ps.is.mpg.de/uploads_file/attachment/attachment/691/00928.pdf)] [[MPI Project Page](https://ps.is.mpg.de/publications/shapy-2022)]
@@ -156,3 +157,6 @@ Conflict of interest disclosure for Michael J. Black March 11, 2022 MJB has rece
 For questions, please contact shapy@tue.mpg.de
 
 For commercial licensing (and all related questions for business applications), please contact ps-licensing@tue.mpg.de.
+=======
+# shapy
+>>>>>>> 84188d3d07d1a49c8f6932368b7c6f72b055ae29
